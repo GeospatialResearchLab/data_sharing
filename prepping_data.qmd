@@ -1,0 +1,116 @@
+---
+title: "Preparing Open Data for Public Repositories"
+project:
+  type: website
+  output-dir: docs
+---
+
+# Overview
+
+Open data is only useful if it is accessible, understandable, and reusable. This mini-guide shows you how to make that happen fast.
+
+**What you’ll learn:**
+
+- How to choose file types that maximize long-term reuse (and what to avoid)
+- How to format quantitative and qualitative data so people and machines can work with it
+- What to include in a README, codebook, and metadata to make your dataset self-explanatory
+- How to package and organize files for a smooth repository deposit
+
+---
+
+# Choosing File Types
+
+- Preferred formats: CSV, TXT, JSON, GeoJSON, TIFF, PNG, XML  
+- Avoid proprietary-only: .xlsx, .sav, .mdb (unless also sharing open versions)  
+- Use non-lossy formats for images and raster data  
+- Check community standards in your discipline  
+
+The format you choose for your data is often the difference between a dataset that is usable for decades and one that quickly becomes obsolete. Open, non-proprietary formats like CSV, TXT, JSON, GeoJSON, TIFF, PNG, or XML are designed to be read by many different tools and will remain accessible long after specific software packages fade away. 
+
+Proprietary formats, such as Excel files (.xlsx), SPSS files (.sav), or Access databases (.mdb), can be useful in your workflow but should not be the only format you share. If you provide these, always include an open format version alongside them. For images and raster data, avoid lossy formats like JPEG where important information may be discarded. Community standards are also important. Look at what your field expects and follow those norms.
+
+---
+
+# Organizing Files Logically
+- Separate raw data, processed data, and documentation
+- Use clear, consistent folder and file naming conventions
+- Avoid burying important files deep in nested folders
+
+Good organization makes your dataset easier to navigate and reduces the chance of errors. A simple structure might include a top-level folder with subfolders for raw_data, processed_data, and documentation. Raw data should remain untouched, while processed or cleaned data goes in its own space.
+
+Naming conventions also matter: choose descriptive names that include relevant details (e.g., survey_responses_2025.csv instead of data1.csv). If your project evolves over time, use version numbers or dates in file names so others can see that there have been changes and which is the most current.
+
+Finally, avoid creating unnecessarily deep folder hierarchies. A user should be able to locate the key files in two or three clicks. Logical categories and clear labeling make it far easier for others (and your future self) to find what they need.
+
+---
+
+# Protecting Privacy in Shared Data
+
+- Remove or anonymize identifying information  
+
+Whether your data is quantitative or qualitative, protecting privacy by removing or anonymizing personally identifying information is a universal responsibility. Even small details can reveal individual identities, so review your dataset carefully and remember to make sure that the data you release is appropriate for your IRB approval.
+
+---
+
+# Formatting Quantitative Data
+
+- Each row = observation, each column = variable (tidy data)  
+- Use consistent units and formats (e.g., ISO dates)  
+- Avoid merged cells or embedded formulas  
+- Include variable names that are clear and human-readable
+- Clearly indicate missing or null values
+
+For quantitative data, clarity and consistency are key. One widely accepted principle is “tidy data”: each row should represent a single observation and each column should represent a variable. This makes the dataset easy to process with statistical software or scripting languages. 
+
+Units and formatting should always be consistent across the dataset. For instance, dates should follow a standard like ISO 8601 (YYYY-MM-DD) rather than mixing formats like “1/2/23” and “January 2, 2023.” Avoid merged cells, embedded formulas, or other formatting tricks that make data look nice in a spreadsheet but complicate machine processing. 
+
+Choose variable names that are descriptive and readable. Instead of `var1` or `tempX`, use names like `temperature_celsius` or `participant_age`. This reduces confusion and makes the dataset easier to interpret for both humans and software.
+
+Finally, make sure you handle missing or null values consistently. Use a standard code (such as NA) rather than leaving cells blank, and explain this choice in your documentation so users know how to interpret your dataset.
+
+---
+
+# Formatting Qualitative Data
+
+- Plain text or open structured formats (e.g., TXT, JSON, XML)  
+- Document coding schemes, categories, and interview protocols  
+- Use UTF-8 encoding for special characters  
+
+Qualitative data often takes the form of text, interviews, or coded responses. Open structured formats like plain text (.txt), JSON, or XML ensure that others can access and interpret the content. 
+
+When sharing coded data, include detailed documentation of the coding schemes and categories so others understand how data was interpreted. If interviews were transcribed, describe the protocol used (e.g., how pauses, tone, or interruptions are marked). Use UTF-8 encoding so that special characters, diacritics, and non-Latin scripts are preserved correctly.
+
+---
+
+# Documentation
+
+- README file: project overview, methodology, file list, contact info  
+- Codebook: variable definitions, units, missing data codes  
+- Metadata: follow standards like Dublin Core, DataCite, or discipline-specific schemas  
+- Provide context for reuse and reproducibility  
+
+Well-prepared documentation transforms raw data into a resource that others can understand and reuse. At a minimum, include a README file that gives an overview of the project, explains the methodology, lists the files included, and provides contact information for questions. A README is the entry point to your dataset. It tells newcomers what they are looking at and why it matters.
+
+For datasets with variables, include a codebook. This is where you define each variable, specify its units, and explain any special codes for missing data or categories. Without this, users can easily misinterpret your data.
+
+Adding metadata further enhances discoverability and reuse. Many repositories support common schemas like Dublin Core or DataCite, while specific disciplines may have their own standards. Good metadata ensures your dataset is not just stored, but also findable through search engines and disciplinary portals.
+
+---
+
+# Putting it All Together
+
+- Share in open formats  
+- Organize files logically
+- Format data consistently
+- Provide documentation (README + codebook)  
+- Check repository guidelines and community norms  
+
+Think of preparing open data as creating a care package for your future collaborators. Share files in open formats, organize them logically, format your data consistently using best practices, and provide strong documentation in the form of README files, codebooks, and metadata. 
+
+Finally, remember to check both your repository’s submission guidelines and the broader norms in your field. Following these ensures your dataset will not only be accepted into the repository but also recognized and reused within your research community.
+
+---
+
+# PDF Download
+
+[Download this information as a PDF handout](handout.pdf)
